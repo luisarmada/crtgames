@@ -9,11 +9,9 @@
 </script>
 
 <template>
-    CSS CRT screen effect - Probably works best on Chrome <br />
-    You can play with the contents of the screen. Be sure to also play with the on/off switch <br/> 
 
     <input type="checkbox" id="switch" checked>
-    <label for="switch" class="switch-label">Turn </label>
+    <label for="switch" class="switch-label"> </label> 
 
     <div class="container">
     
@@ -143,7 +141,7 @@ body {
   background: #121010;
   width: 100%;
   height: 100%;
-  margin-top: -100px;
+  margin-top: -50px;
   position: relative;
   overflow: hidden;
   border: 2px solid #666;

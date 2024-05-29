@@ -6,7 +6,12 @@
     <body>
     <div id="wrapper">
       <h1 id="myname">Luis Armada</h1>
-      <h2 id="subtitle">a portfolio.</h2>
+      <h2 id="subtitle">student & programmer</h2>
+      <a> about_me</a>
+      <a> my_projects</a>
+      <a> blog</a>
+      <a> extra_games</a> <br>
+      <a> contact </a>
     </div>
   </body>
 </template>
@@ -51,7 +56,19 @@
   #subtitle {
     font-size: 1vw;
     text-align: right;
-    margin-top: -30px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
+
+  a::selection,
+  #myname::selection,
+  #subtitle::selection{
+    color:#000;
+    background-color: #eee;
+  }
+
+  a {
+    cursor: pointer;
   }
 
   @keyframes textflicker {
