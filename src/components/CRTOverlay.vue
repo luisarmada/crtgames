@@ -9,9 +9,9 @@
 </script>
 
 <template>
-
     <input type="checkbox" id="switch" checked>
     <label for="switch" class="switch-label"> </label> 
+   
 
     <div class="container">
     
@@ -22,7 +22,8 @@
     </div>
 </template>
 
-<style lang="css">
+<style scoped lang="css">
+
 
 body {
   background: #111;
@@ -144,7 +145,6 @@ body {
   margin-top: -50px;
   position: relative;
   overflow: hidden;
-  border: 2px solid #666;
 }
 .container::after {
   content: " ";
@@ -233,6 +233,7 @@ body {
   width: 100%;
   height: 100%;
   border: none;
+  opacity: 0;
 }
 
 #switch ~ .container > .screen {
@@ -243,6 +244,7 @@ body {
 #switch:checked ~ .container > .screen {
   animation: turn-on 4s linear;
   animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 
 @keyframes overlay-anim {
@@ -263,7 +265,7 @@ body {
   color: #00FF00;
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 40px;
   font-size: 60px;
   visibility: hidden;
   pointer-events: none;
@@ -272,6 +274,7 @@ body {
 #switch:checked ~ .container .overlay {
   animation: overlay-anim 5s linear;
   animation-fill-mode: forwards;
+  
 }
 
 </style>

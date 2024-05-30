@@ -1,11 +1,17 @@
-<script setup>
+<script>
 import CRTOverlay from './components/CRTOverlay.vue'
+
+export default{
+  components: {
+    CRTOverlay
+  }
+}
 </script>
 
 <template>
   <body>
+    <div id="bgblock"></div>
     <div id="monitor">
-      
       <div id="screenspace">
         <CRTOverlay />
       </div>
@@ -15,9 +21,20 @@ import CRTOverlay from './components/CRTOverlay.vue'
 </template>
 
 <style scoped>
-  body {
-    overflow: hidden;
-  }
+#bgblock {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+}
+
+body {
+  overflow: hidden;
+  background: #003321;
+}
+
 #monitor{
   position: absolute;
   left: 0;
@@ -39,29 +56,20 @@ import CRTOverlay from './components/CRTOverlay.vue'
 
 #screenspace {
   position: absolute;
-  right: 25vw;
+  width: 50vw;
   height: 37vw;
   bottom: 9.5vw;
-  left: 25vw;
+  left: 50%;
+  transform:translate(-50%, 0);
   z-index: 10;
-  background-color: green;
 }
 
 @media only screen and (max-width: 178vh ) {
+  /* change screen space scale when width is not scaling*/
   #screenspace{
-    /*background-color: blue;*/
     bottom: calc(100%  - 83%);
-    left: 0;
-    right: 0;
-    height: 66vh;
-  }
-}
-@media only screen and (max-width: 89vh ) {
-  #screenspace{
-    /*background-color: red;*/
-    bottom: calc(100%  - 83%);
-    left: 0vw;
-    right: 0vw;
+    width: 90vh;
+    /*right: 0;*/
     height: 66vh;
   }
 }

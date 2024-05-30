@@ -1,77 +1,65 @@
 <script>
+import HomePage from './HomeScreen.vue'
+import AboutPage from './AboutPage.vue'
 
+  export default {
+    components: {
+      HomePage, AboutPage
+    },
+    data() {
+      return {
+        curr_screen: 'home'
+      }
+    }
+  }
 </script>
 
+
 <template>
-    <body>
-    <div id="wrapper">
-      <h1 id="myname">Luis Armada</h1>
-      <h2 id="subtitle">student & programmer</h2>
-      <a> about_me</a>
-      <a> my_projects</a>
-      <a> blog</a>
-      <a> extra_games</a> <br>
-      <a> contact </a>
-    </div>
+  <body>
+    <HomePage @change-page="(n) => curr_screen = n" v-if = "curr_screen === 'home'" />
+    <AboutPage @change-page="(n) => curr_screen = n" v-if = "curr_screen === 'about'" />
   </body>
 </template>
 
-<style>
- @font-face {
+
+<style lang="css">
+
+@font-face {
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+}
+
+@font-face {
     font-family: 'Noto Sans Display';
     font-style: normal;
     font-weight: 400;
-    src: url(../assets/NotoSansDisplay-Regular.ttf);
-  }
-  body {
-    font-family: 'Noto Sans Display';
-    
-    background: #000;
-    color: #eee;
+    src: url(../assets/fonts/NotoSansDisplay-Regular.ttf);
+}
 
-    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
-    animation-duration: 0.015s;
-    animation-name: textflicker;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+@font-face {
+    font-family: 'VCR OSD MONO';
+    src: url(../assets/fonts/VCR_OSD_MONO.ttf);
+}
 
-    overflow: hidden;
-  }
-  #wrapper {
-    width: 23vw;
-    left: 50%;
-    transform: translate(-50%, 0);
-    position: absolute;
-    top: 35%;
-    height: 100vh;
-    text-align: center;
-  }
+body {
+  background: #000;
+  color: #eee;
 
-  #myname {
-    font-size: 4vw;
-    letter-spacing: -0.0125em;
-    font-weight: 800;
-  }
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  animation-duration: 0.015s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
-  #subtitle {
-    font-size: 1vw;
-    text-align: right;
-    margin-top: -20px;
-    margin-bottom: 10px;
-  }
+  overflow: hidden;
 
-  a::selection,
-  #myname::selection,
-  #subtitle::selection{
-    color:#000;
-    background-color: #eee;
-  }
+  font-family: "Share Tech Mono", monospace;
+}
 
-  a {
-    cursor: pointer;
-  }
-
-  @keyframes textflicker {
+@keyframes textflicker {
     from {
       text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
     }
