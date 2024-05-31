@@ -9,8 +9,8 @@
       <h1 id="myname">Luis Armada</h1>
       <h2 id="subtitle">student & programmer</h2>
       <a> [ about me ]</a><br>
-      <a> [ my projects ]</a><br>
-      <a> [ my links ] </a> <br>
+      <a> [ my portfolio ]</a><br>
+      <a> [ links and contact ] </a> <br>
       <br>
       <a @click="$emit('changePage', 'about')"> [ load game ]</a> <br>
     </div>
