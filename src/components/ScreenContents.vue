@@ -1,10 +1,13 @@
 <script>
 import HomePage from './HomeScreen.vue'
 import AboutPage from './AboutPage.vue'
+import PortfolioPage from './PortfolioNavPage.vue'
+import ContactsPage from './ContactsPage.vue'
+import WebGamesPage from './WebGamesPage.vue'
 
   export default {
     components: {
-      HomePage, AboutPage
+      HomePage, AboutPage, PortfolioPage, ContactsPage, WebGamesPage
     },
     data() {
       return {
@@ -18,7 +21,10 @@ import AboutPage from './AboutPage.vue'
 <template>
   <body>
     <HomePage @change-page="(n) => curr_screen = n" v-if = "curr_screen === 'home'" />
-    <AboutPage @change-page="(n) => curr_screen = n" v-if = "curr_screen === 'about'" />
+    <AboutPage @change-page="(n) => curr_screen = n" v-else-if = "curr_screen === 'about'" />
+    <PortfolioPage @change-page="(n) => curr_screen = n" v-else-if = "curr_screen === 'portfolio'" />
+    <ContactsPage @change-page="(n) => curr_screen = n" v-else-if = "curr_screen === 'contacts'" />
+    <WebGamesPage @change-page="(n) => curr_screen = n" v-else-if = "curr_screen === 'webgames'" />
   </body>
 </template>
 

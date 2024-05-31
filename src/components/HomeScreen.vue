@@ -8,11 +8,11 @@
     <div id="wrapper">
       <h1 id="myname">Luis Armada</h1>
       <h2 id="subtitle">student & programmer</h2>
-      <a> [ about me ]</a><br>
-      <a> [ my portfolio ]</a><br>
-      <a> [ links and contact ] </a> <br>
+      <a @click="$emit('changePage', 'about')" > [ about me ]</a><br>
+      <a @click="$emit('changePage', 'portfolio')" > [ my portfolio ]</a><br>
+      <a @click="$emit('changePage', 'contacts')"> [ links and contact ] </a> <br>
       <br>
-      <a @click="$emit('changePage', 'about')"> [ load game ]</a> <br>
+      <a @click="$emit('changePage', 'webgames')"> [ load game ]</a> <br>
     </div>
 </template>
 
